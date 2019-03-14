@@ -1,2 +1,3 @@
-# talleres_openwebinars
-Talleres impartidos en Openwebinars
+# Talleres en openwebinars
+
+* [Despliegue de aplicaciones PHP en Heroku](heroku_php)
