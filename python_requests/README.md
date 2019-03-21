@@ -26,3 +26,7 @@ Intermedio
 * Conocimientos básicos de python3
 
 ## Desarrollo
+
+* Temperatura: https://openweathermap.org/api
+* Cine: https://developers.themoviedb.org/3/getting-started/introduction
+* Fútbol: http://www.resultados-futbol.com/api/documentacion
