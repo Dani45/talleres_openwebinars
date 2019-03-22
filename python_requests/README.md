@@ -27,6 +27,22 @@ Intermedio
 
 ## Desarrollo
 
+1. Ver presentación
+2. Consultas con `curl` desde línea de comandos:
+
+    * API sin key: https://swapi.co (Ver Documentación)
+
+            curl https://swapi.co/api/people/
+            curl https://swapi.co/api/people/1/ | json_pp 
+
+    * API con key: https://openweathermap.org/. Ver Documentación de la API: https://openweathermap.org/api. Acceder y crear un API key nueva.
+
+            export open_wheather_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+            curl curl "http://api.openweathermap.org/data/2.5/weather?q=Sevilla&mode=json&units=metric&APPID=$open_wheather_key" | json_pp
+
+
+
 * Temperatura: https://openweathermap.org/api
 * Cine: https://developers.themoviedb.org/3/getting-started/introduction
 * Fútbol: http://www.resultados-futbol.com/api/documentacion
