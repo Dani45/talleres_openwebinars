@@ -56,8 +56,8 @@ Intermedio
             >>> r.status_code
             200
             >>> r.json()
-            >>> resultado=r.json()
-            >>> print(resultado["name"])
+            >>> datos=r.json()
+            >>> print(datos["name"])
             Luke Skywalker
 
     * Consulta openwheathermap:
@@ -66,14 +66,16 @@ Intermedio
             >>> import os
             >>> api_key=os.getenv("open_wheather_key")
             >>> parametros={"q":"Sevilla","mode":"json","units":"metric","APPID":api_key}
-            >>> r=requests.get("http://api.openweathermap.org/data/2.5/weather",    params=parametros)
+            >>> r=requests.get("http://api.openweathermap.org/data/2.5/weather",params=parametros)
             >>> r.status_code
             200
             >>> r.url
             'http://api.openweathermap.org/data/2.5/weather?q=Sevilla&units=metric& APPID=f06f3055d451e81e263f770fde319fea&mode=json'
             >>> r.json()
-            
+            >>> datos=r.json()
+            >>> print(datos["main"]["temp"])
 
-* Temperatura: https://openweathermap.org/api
+            
+    * Demo1: Temperatura: https://openweathermap.org/api
 * Cine: https://developers.themoviedb.org/3/getting-started/introduction
 * Fútbol: http://www.resultados-futbol.com/api/documentacion
