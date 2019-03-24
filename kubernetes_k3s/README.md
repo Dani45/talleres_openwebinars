@@ -26,3 +26,44 @@ Intermedio
 * Conocimientos básicos sobre linux, que será el sistema operativo usado en este taller
 
 ## Desarrollo
+
+    vagrant up
+    vagrant ssh maquina1
+
+    sudo su
+    cd /usr/local/bin
+    wget https://github.com/rancher/k3s/releases/download/v0.2.0/k3s
+    chmod +x k3s
+
+
+    k3s server &
+
+    k3s kubectl get nodes
+    NAME      STATUS   ROLES    AGE   VERSION
+    stretch   Ready    <none>   47s   v1.13.4-k3s.1
+
+    cat /var/lib/rancher/k3s/server/node-token
+
+    En los otros dos nodos como su:
+
+    k3s agent --server https://192.168.33.10:6443 --token ${NODE_TOKEN}
+
+Configuración de un cliente externo. En el master:
+
+    cat /etc/rancher/k3s/k3s.yaml
+
+Y la copio en el cliente y le cambio la ip
+
+    ...
+    server: https://192.168.33.10:6443
+    ...
+
+    export KUBECONFIG=~/.kube/config 
+    vagrant@cliente:~$ kubectl get nodes
+    NAME       STATUS   ROLES    AGE   VERSION
+    maquina1   Ready    <none>   37m   v1.13.4-k3s.1
+    maquina2   Ready    <none>   36m   v1.13.4-k3s.1
+    maquina3   Ready    <none>   34m   v1.13.4-k3s.1
+
+
+
