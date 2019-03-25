@@ -27,10 +27,7 @@ Intermedio
 
 ## Desarrollo
 
-    vagrant up
-    vagrant ssh maquina1
-
-    sudo su
+    su
     cd /usr/local/bin
     wget https://github.com/rancher/k3s/releases/download/v0.2.0/k3s
     chmod +x k3s
@@ -50,7 +47,7 @@ Intermedio
 
 Configuración de un cliente externo. En el master:
 
-    cat /etc/rancher/k3s/k3s.yaml
+    scp jose /etc/rancher/k3s/k3s.yaml
 
 Y la copio en el cliente y le cambio la ip
 
@@ -65,5 +62,9 @@ Y la copio en el cliente y le cambio la ip
     maquina2   Ready    <none>   36m   v1.13.4-k3s.1
     maquina3   Ready    <none>   34m   v1.13.4-k3s.1
 
-
+    kubectl create deploy nginx --image=nginx
+    kubectl expose deploy nginx --port=80 --type=NodePort
+    
+    cd /vagrant/letschat
+    
 
