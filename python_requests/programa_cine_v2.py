@@ -12,5 +12,13 @@ if r.status_code == 200:
         print(cont,peliculas["title"],"->",peliculas["vote_average"])
         ids.append(peliculas["id"])
         cont+=1
+    indice=int(input("Indica la película de la que quieres obtener información:"))
+    id=ids[indice-1]
+    parametros={"language":"es-ES","api_key":api_key}
+    r=requests.get(URL_BASE+"movie/"+str(id),params=parametros)
+    if r.status_code == 200:
+        datos = r.json()
+        print("Fecha lanzamiento:",datos["release_date"])
+        print(datos["overview"])
 else:
     print("Error en la consulta")
