@@ -77,6 +77,6 @@ Intermedio
 
             
     * Demo1: Temperatura: https://openweathermap.org/api
-    * Demo2: Fútbol: http://www.resultados-futbol.com/api/documentacion
+    * Demo2: Fútbol: https://es.besoccer.com/api/documentacion
     * Demo3: Cine: https://developers.themoviedb.org/3/getting-started/introduction
     
