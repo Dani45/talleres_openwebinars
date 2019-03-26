@@ -70,12 +70,13 @@ Intermedio
             >>> r.status_code
             200
             >>> r.url
-            'http://api.openweathermap.org/data/2.5/weather?q=Sevilla&units=metric& APPID=f06f3055d451e81e263f770fde319fea&mode=json'
+            'http://api.openweathermap.org/data/2.5/weather?q=Sevilla&units=metric& APPID=xxx&mode=json'
             >>> r.json()
             >>> datos=r.json()
             >>> print(datos["main"]["temp"])
 
             
     * Demo1: Temperatura: https://openweathermap.org/api
-* Cine: https://developers.themoviedb.org/3/getting-started/introduction
-* Fútbol: http://www.resultados-futbol.com/api/documentacion
+    * Demo2: Fútbol: http://www.resultados-futbol.com/api/documentacion
+    * Demo3: Cine: https://developers.themoviedb.org/3/getting-started/introduction
+    
