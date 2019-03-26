@@ -1,0 +1,1 @@
+http://apiclient.resultados-futbol.com/scripts/api/api.php?league=2&key=xxxxx&req=tables&format=json
