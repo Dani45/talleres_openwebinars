@@ -30,3 +30,31 @@ Intermedio
 * Conocimientos muy básico de linux (el taller se impartirá usando este sistema operativo), aunque se puede hacer usando cualquier otro sistema operativo.
 
 ## Desarrollo
+
+### Despliegue de una aplicación PHP con heroku dashboard
+
+Repositorio: https://github.com/josedom24/heroku_php
+
+Se despliega con apache2 y a continuación se cambia a nginx y se vuelve a desplegar.
+
+### Ciclo de vida de una aplicación PHP en heroku
+
+Repositorio: https://github.com/josedom24/heroku_bookmedik
+
+* Vamos a añadir un addons de ClearDB Mysql.
+* Vemos que se ha creado una variable de entorno: `mysql usurio:password@server/bd`
+* Cargamos el esquema de la base de dato: `mysql -u user -ppassword -h server bd < schema.sql
+* Probamos con database.php, poniendo los datos estáticamente.
+* Comprobamos que la aplicación está funcionando
+
+**Entorno de desarrollo/producción**
+
+* Modifico database.php para que si estamos en horoku lea y parsee la variable de entorno, y si estamos en local ponga una configuración estática de la base de datos.
+* Comprobamos que funciona en local y desplegamos en heroku.
+
+**Despliegue automáticos**
+
+* Configuramos los despliegues automáticos.
+* Realizamos un cambio en la página, la probamos en local y comprobamos que se ha desplegado de forma automática.
+
+### Despliegue de un CMS en heroku
