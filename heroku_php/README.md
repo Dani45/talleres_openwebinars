@@ -61,32 +61,30 @@ Repositorio: https://github.com/josedom24/heroku_bookmedik
 
 * Instalar heroku CLI
 
-    heroku login -i
+        heroku login -i
+        
+        cd wp-jose/
+        git init
+
+* Copia los ficheros del repo clonado (https://github.com/technomile/Heroku-WordPress)
+
+        git add *
+        // Dentro del directorio    
+        heroku apps:create wp-jose
     
+        git remote -v
+        heroku	https://git.heroku.com/wp-jose.git (fetch)
+        heroku	https://git.heroku.com/wp-jose.git (push)
 
-    cd wp-jose/
-    git init
+        git commit -am "primer commit"
 
-    //Copia los ficheros del repo clonado (https://github.com/technomile/Heroku-WordPress)
+        heroku apps:info wp-jose
 
-    git add *
-    // dEntro del directorio    
-    heroku apps:create wp-jose
-    
-     git remote -v
-    heroku	https://git.heroku.com/wp-jose.git (fetch)
-    heroku	https://git.heroku.com/wp-jose.git (push)
+* Base de datos
+  
+        heroku addons:add cleardb
+        heroku config
 
-    git commit -am "primer commit"
-
-    heroku apps:info wp-jose
-
-    // Base de datos
-    heroku addons:add cleardb
-
-    heroku config
-
-    //Miro wl wp-config.php para ver como se parsea la variable de entorno
-
-    //Instalamos plugin "WP Offload Media Lite"
+* Miro wl wp-config.php para ver como se parsea la variable de entorno
+* Instalamos plugin "WP Offload Media Lite"
 
