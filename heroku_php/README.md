@@ -44,12 +44,12 @@ Repositorio: https://github.com/josedom24/heroku_bookmedik
 * Vamos a añadir un addons de ClearDB Mysql.
 * Vemos que se ha creado una variable de entorno: `mysql usurio:password@server/bd`
 * Cargamos el esquema de la base de dato: `mysql -u user -ppassword -h server bd < schema.sql
-* Probamos con database.php, poniendo los datos estáticamente.
+* Probamos con `database.php`, poniendo los datos estáticamente.
 * Comprobamos que la aplicación está funcionando
 
 **Entorno de desarrollo/producción**
 
-* Modifico database.php para que si estamos en horoku lea y parsee la variable de entorno, y si estamos en local ponga una configuración estática de la base de datos.
+* Modifico `database.php` para que si estamos en horoku lea y parsee la variable de entorno, y si estamos en local ponga una configuración estática de la base de datos.
 * Comprobamos que funciona en local y desplegamos en heroku.
 
 **Despliegue automáticos**
@@ -58,3 +58,35 @@ Repositorio: https://github.com/josedom24/heroku_bookmedik
 * Realizamos un cambio en la página, la probamos en local y comprobamos que se ha desplegado de forma automática.
 
 ### Despliegue de un CMS en heroku
+
+* Instalar heroku CLI
+
+    heroku login -i
+    
+
+    cd wp-jose/
+    git init
+
+    //Copia los ficheros del repo clonado (https://github.com/technomile/Heroku-WordPress)
+
+    git add *
+    // dEntro del directorio    
+    heroku apps:create wp-jose
+    
+     git remote -v
+    heroku	https://git.heroku.com/wp-jose.git (fetch)
+    heroku	https://git.heroku.com/wp-jose.git (push)
+
+    git commit -am "primer commit"
+
+    heroku apps:info wp-jose
+
+    // Base de datos
+    heroku addons:add cleardb
+
+    heroku config
+
+    //Miro wl wp-config.php para ver como se parsea la variable de entorno
+
+    //Instalamos plugin "WP Offload Media Lite"
+
