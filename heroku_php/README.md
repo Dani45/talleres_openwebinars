@@ -88,3 +88,6 @@ Repositorio: https://github.com/josedom24/heroku_bookmedik
 * Miro wl wp-config.php para ver como se parsea la variable de entorno
 * Instalamos plugin "WP Offload Media Lite"
 
+* Escalado
+
+        heroku ps:scale web=2 -a wp-jose
