@@ -55,7 +55,7 @@ Instalo kubectl
 
 Configuración de un cliente externo. En el master:
 
-    scp jose@xxxxx:/etc/rancher/k3s/k3s.yaml .
+    scp jose@xxxxx:/etc/rancher/k3s/k3s.yaml ~/.kube/config
 
 Y la copio en el cliente y le cambio la ip
 
