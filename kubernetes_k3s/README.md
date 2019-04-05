@@ -45,9 +45,17 @@ Intermedio
 
     k3s agent --server https://192.168.33.10:6443 --token ${NODE_TOKEN}
 
+Instalo kubectl
+
+    apt-get update && sudo apt-get install -y apt-transport-https
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+    echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
+    apt-get update
+    apt-get install -y kubectl
+
 Configuración de un cliente externo. En el master:
 
-    scp jose /etc/rancher/k3s/k3s.yaml
+    scp jose@xxxxx:/etc/rancher/k3s/k3s.yaml .
 
 Y la copio en el cliente y le cambio la ip
 
