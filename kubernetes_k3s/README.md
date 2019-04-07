@@ -47,7 +47,7 @@ Intermedio
 
 Instalo kubectl
 
-    apt-get update && sudo apt-get install -y apt-transport-https
+    apt-get update && apt-get install -y apt-transport-https curl git
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
     echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
     apt-get update
@@ -72,6 +72,9 @@ Y la copio en el cliente y le cambio la ip
 
     kubectl create deploy nginx --image=nginx
     kubectl expose deploy nginx --port=80 --type=NodePort
+    kubectl scale --replicas=3 deploy/nginx
+    kubectl delete deploy/nginx
+    kubectl delete service/nginx
     
     cd /vagrant/letschat
     
