@@ -62,16 +62,16 @@ Repositorio: https://github.com/josedom24/heroku_bookmedik
 * Instalar heroku CLI
 
         heroku login -i
-        
+
         cd wp-jose/
         git init
 
 * Copia los ficheros del repo clonado (https://github.com/technomile/Heroku-WordPress)
 
         git add *
-        // Dentro del directorio    
+        // Dentro del directorio
         heroku apps:create wp-jose
-    
+
         git remote -v
         heroku	https://git.heroku.com/wp-jose.git (fetch)
         heroku	https://git.heroku.com/wp-jose.git (push)
@@ -81,7 +81,7 @@ Repositorio: https://github.com/josedom24/heroku_bookmedik
         heroku apps:info wp-jose
 
 * Base de datos
-  
+
         heroku addons:add cleardb
         heroku config
 
