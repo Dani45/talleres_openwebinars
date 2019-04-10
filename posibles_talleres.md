@@ -2,3 +2,4 @@
 
 * PowerDNS
 * Rancher
+* nomad
