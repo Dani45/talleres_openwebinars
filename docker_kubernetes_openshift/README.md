@@ -31,3 +31,17 @@ Intermedio
 
 ## Desarrollo
 
+1. Creamos varios contenedores:
+        
+        docker run --name servidorweb -d -p 80:80 nginx
+
+        docker run --name servidorweb2 -d -p 8080:80 apache2
+
+    Probamos diferenciones opciones: 
+
+        docker ps
+        docker image ls
+        docker logs ....
+        docker run -it ..... /bin/bash
+
+2. Creamos una imagen
