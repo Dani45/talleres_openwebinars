@@ -44,4 +44,8 @@ Intermedio
         docker logs ....
         docker run -it ..... /bin/bash
 
-2. Creamos una imagen
+2. Creamos una imagen:
+
+        docker build -t josedom24/web .
+
+        docker run --name servidorweb -d -p 80:80 josedom24/web
