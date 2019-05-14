@@ -31,6 +31,8 @@ Intermedio
 
 ## Desarrollo
 
+### Docker
+
 1. Creamos varios contenedores:
         
         docker run --name servidorweb -d -p 80:80 nginx
@@ -46,6 +48,13 @@ Intermedio
 
 2. Creamos una imagen:
 
-        docker build -t josedom24/web .
+        docker build -t josedom24/web:v1 .
 
-        docker run --name servidorweb -d -p 80:80 josedom24/web
+        docker run --name servidorweb -d -p 80:80 josedom24/web:v1
+
+3. Modificamos aplicación
+4. Distribuimos la aplicación
+
+### Kubernetes
+
+
