@@ -1,4 +1,4 @@
-# Diocker, kubernetes y OpenShift
+# Docker, kubernetes y OpenShift
 
 ## Objetivos
 
