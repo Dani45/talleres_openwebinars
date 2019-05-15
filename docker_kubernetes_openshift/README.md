@@ -57,4 +57,5 @@ Intermedio
 
 ### Kubernetes
 
+### OpenShift
 
