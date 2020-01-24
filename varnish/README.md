@@ -69,3 +69,38 @@ Partimos de la instalación de apache2 con el módulo PHP y wordpress instalado.
 
     Nos da unos 150 #/seg
 
+9. Vamos a mejorarlo con varnish
+
+        apt install varnish
+
+    Ponemos nginx escuchando en el puerto 8080 en el fichero `/etc/nginx/sites-available/default`. Comprobamos:
+
+        netstat -putan
+
+    Vamos a editar el archivo `/etc/default/varnish` y a configurar el demonio para que escuche desde el puerto 80 de la interfaz pública del servidor.
+
+        DAEMON_OPTS="-a :80 
+         -T localhost:6082 
+         -f /etc/varnish/default.vcl 
+         -S /etc/varnish/secret 
+         -s malloc,1G"
+        
+    A continuación tenemos que cambiar la unidad de systemd para que arranque varnish en el puerto 80, para ello editamos el fichero `/lib/systemd/system/varnish.service` y cambiamos la siguiente línea para que arranque en el puerto 80:
+
+        ExecStart=/usr/sbin/varnishd -j unix,user=vcache -F -a :80 -T localhost:6082 -f /etc/varnish/default.vcl -S /etc/varnish/secret -s malloc,256m
+
+    Reiniciamos la unidad de systemd y reinciamos el servicio:
+
+        systemctl daemon-reload
+        systemctl restart varnish
+
+    Varnish utiliza un lenguaje de configuración llamado apropiadamente VCL (Varnish Configuration Language). Está situado en `/etc/varnish/default.vcl`. 
+
+    En este fichero tenemos que configurar donde se encuentra el servidor web (backend), si suponemos que hemos configurado el servidor web para que escuche en el puerto 8080:
+
+    backend default {
+        .host = "127.0.0.1";
+        .port = "8080";
+    }
+
+    Por último indicar que con el comando `varnishstat` podemos obtener la estadística de uso de varnish.
