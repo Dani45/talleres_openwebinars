@@ -89,7 +89,7 @@ Partimos de la instalación de apache2 con el módulo PHP y wordpress instalado.
 
         ExecStart=/usr/sbin/varnishd -j unix,user=vcache -F -a :80 -T localhost:6082 -f /etc/varnish/default.vcl -S /etc/varnish/secret -s malloc,256m
 
-    Reiniciamos la unidad de systemd y reinciamos el servicio:
+    Reiniciamos la unidad de systemd y reiniciamos el servicio:
 
         systemctl daemon-reload
         systemctl restart varnish
@@ -98,9 +98,19 @@ Partimos de la instalación de apache2 con el módulo PHP y wordpress instalado.
 
     En este fichero tenemos que configurar donde se encuentra el servidor web (backend), si suponemos que hemos configurado el servidor web para que escuche en el puerto 8080:
 
-    backend default {
-        .host = "127.0.0.1";
-        .port = "8080";
-    }
+        backend default {
+            .host = "127.0.0.1";
+            .port = "8080";
+        }
 
     Por último indicar que con el comando `varnishstat` podemos obtener la estadística de uso de varnish.
+
+10. Hacemos una prueba:
+
+        ab -t 10 -c 200 -k http://varnish.local/wordpress/index.php
+
+    Nos da unos 11500 #/seg
+
+    Comprobamos con otra prueba que sólo llega una petición al servidor web.
+
+        tail -f /var/log/nginx/access.log
