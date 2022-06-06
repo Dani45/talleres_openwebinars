@@ -38,3 +38,7 @@ Todas las fuentes de almacenamiento que nos permiten la realización de instant�
 * [Creación de una fuente de almacenamiento de tipo Directory](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo4/directory.md)
 * [Añadir nuevos discos a una máquina virtual](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo4/nuevo_almacenamiento.md)
 * [Gestión de los discos de una máquina virtual](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo4/gestion_almacenamiento.md)
+* [Clonación de máquinas virtuales](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo5/clonacion.md)
+* [Convirtiendo máquinas virtuales en plantillas](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo5/plantillas.md)
+* [Snapshots de máquinas virtuales](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo5/snapshot.md)
+* [Copias de seguridad de máquinas virtuales](https://github.com/iesgn/curso_proxmox_cep/blob/main/modulo5/backup.md)
